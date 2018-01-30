@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-9">
+    <h3>Guides</h3>
+  </div>
+  <div class="col-md-3">
+    <button type="button" class="btn btn-primary float-right" (click)="createGuide()">New</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="list-group" *ngIf="guides.length">
+      <button type="button" class="list-group-item list-group-item-action" *ngFor="let guide of guides" (click)="viewDetails(guide.id)">
+        Title : <b>{{guide.title}}</b>
+        Url : <b>{{guide.url}}</b>
+        Duration : <b>{{guide.duration}} secs</b>
+      </button>
+    </div>
+    <div class="list-group" *ngIf="!guides.length">
+      <h5 class="float-left">no guides found</h5>
+    </div>
+  </div>
+</div>
